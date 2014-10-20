@@ -6,4 +6,4 @@ RUN pacman -Syq --noprogressbar --noconfirm transmission-cli
 VOLUME "/config"
 
 EXPOSE 9091
-CMD /usr/bin/transmission-daemon -f --log-error -g /config
+CMD /usr/bin/transmission-daemon --foreground --no-portmap --log-error --config-dir /config
