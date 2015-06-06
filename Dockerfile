@@ -1,7 +1,7 @@
 FROM justin8/archlinux
 MAINTAINER justin@dray.be
 
-RUN pacman -Syq --noprogressbar --noconfirm transmission-cli
+RUN pacman -Syq --noprogressbar --noconfirm transmission-cli && rm -rf /var/cache/pacman/pkg/*
 
 VOLUME "/config"
 
