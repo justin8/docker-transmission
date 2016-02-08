@@ -1,1 +1,1 @@
-This is a docker image for Transmission running on an Arch linux container
+This is a docker image for Transmission running on an Alpine linux container

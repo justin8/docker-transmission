@@ -1,7 +1,8 @@
-FROM justin8/archlinux
+FROM alpine
 MAINTAINER justin@dray.be
 
-RUN pacman -Syq --noprogressbar --noconfirm transmission-cli && rm -rf /var/cache/pacman/pkg/*
+RUN apk add --update transmission-daemon
+RUN apk info transmission-daemon | grep -om1 '[0-9].[0-9.a-z-]*' > /version
 
 VOLUME "/config"
 
