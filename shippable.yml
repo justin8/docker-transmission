@@ -1,2 +1,17 @@
-script:
-  - true
+language: none
+
+build:
+    pre_ci:
+        - apt-get install -y dos2unix
+        - image=${REPO_NAME##*-}
+        - docker build -t justin8/$image .
+        - version=$(docker run justin8/$image cat /version | dos2unix)
+        - docker tag justin8/transmission:latest justin8/transmission:$version
+        - docker images
+    push:
+        - docker push justin8/transmission:$version
+
+integrations:
+    hub:
+        - integrationName: dockerhub
+          type: docker
