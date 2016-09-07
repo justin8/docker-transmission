@@ -6,7 +6,7 @@ build:
         - apt-get install -y dos2unix
         - image=${REPO_NAME##*-}
         - echo $image
-        - docker build -t justin8/$image .
+        - docker build --no-cache -t justin8/$image .
         - version=$(docker run justin8/$image cat /version | dos2unix)
         - echo $version
         - docker tag -f justin8/$image:latest justin8/$image:$version
