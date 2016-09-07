@@ -1,5 +1,5 @@
 #Docker Transmission#
-[![Build Status](https://jenkins.dray.be/buildStatus/icon?job=docker_transmission)](https://jenkins.dray.be/job/docker_transmission)
+[![Run Status](https://api.shippable.com/projects/57cfd3812146e50e00af35ef/badge?branch=master)](https://app.shippable.com/projects/57cfd3812146e50e00af35ef)
 
 This is a docker image for Transmission running on an Alpine linux container
 
